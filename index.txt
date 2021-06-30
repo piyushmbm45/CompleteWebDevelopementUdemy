@@ -1,0 +1,8 @@
+vscode extensions
+    -> ESLint
+    -> Color Highlight
+    -> EJS language support
+    -> Auto Close Tag
+    -> Prettier - Code formatter
+    -> stylelint-plus
+
