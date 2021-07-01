@@ -25,3 +25,15 @@ Lecture 1.
 
         -> codepen.io
         -> devdocs.io
+
+
+Lecture 2. 
+        -> Anatomy of HTML Tag
+        -> start tag and ending tag depends on html elements
+        -> some of the html elements does not have any content like <br>
+        -> <br> known as self closing tag
+        -> <hr> - horizontal line
+        -> to change the by default values of line we need attributes
+        -> <hr size="3"> so it creates a horizontal line of 3px (by default 1px) - size="3" is html attribute.
+        
+                
