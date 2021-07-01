@@ -6,3 +6,22 @@ vscode extensions
     -> Prettier - Code formatter
     -> stylelint-plus
 
+Date : 1-7-2021
+Lecture 1. 
+        -> Introduction To HTML
+        -> Markup language - we mark on data to present in specific manner
+                -> for eg. In any book or ads we see some *(star mark) 
+                -> it means see bottom of the page or t&c applied.
+                -> so we marked the things to perform some specific task
+
+                -> other markup language
+                -> XML - extensible Markup language
+                -> GML - Geography Markup language 
+
+        -> headings h1 to h6
+        -> <> angular bracket
+        -> / forward slash
+        -> <br> line break - didn't require closing Tag
+
+        -> codepen.io
+        -> devdocs.io
