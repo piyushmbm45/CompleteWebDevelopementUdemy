@@ -35,5 +35,9 @@ Lecture 2.
         -> <hr> - horizontal line
         -> to change the by default values of line we need attributes
         -> <hr size="3"> so it creates a horizontal line of 3px (by default 1px) - size="3" is html attribute.
-        
+
+Date : 2-7-2021
+
+Lecture 3.
+        -> Starting a web developement course
                 
