@@ -78,3 +78,15 @@ Lecture 5.
         -> adding pages to html file by using <a> tag.
                 -> creating pages in same folder
                
+
+Lecture 6. 
+        -> learn about creating table
+        -> html - structure
+        -> css - styling
+        -> js - behaviour
+        -> learnig about table
+                -> tr
+                -> td
+                -> thead
+                -> tbody
+                -> tfoot
