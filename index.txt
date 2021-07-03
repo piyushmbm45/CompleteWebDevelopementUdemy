@@ -49,6 +49,16 @@ Lecture 3.
                 -> Title of the file
                 -> meta data tells browser that use this format
                         -> character sets
-                        -> description
+                        -> description - shows in google search below the website.
                         -> viewport etc.
-                
+
+
+Lecture 4. 
+        -> adding heading to personal site h1
+        -> paragrapgh - <p>
+        -> how to italics - <i>
+        -> difference between <em> tag and <i> tag
+                -> <i> its a style tag - just make italics
+                -> but <em> tag emphasize the content in it which we wanted from html
+        -> diff between <strong> and <b> (bold)
+                -> same as above
