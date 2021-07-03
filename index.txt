@@ -62,3 +62,19 @@ Lecture 4.
                 -> but <em> tag emphasize the content in it which we wanted from html
         -> diff between <strong> and <b> (bold)
                 -> same as above
+
+
+Date 3-7-2021
+
+Lecture 5.
+        -> ordered and unordered list
+        -> nesting of list - list inside list
+        -> for ordered list we define how it will start by using type
+                -> <ol type="i"></ol> 
+                -> for roman start of list
+
+        -> Hyperlink - we can link bunch of document to a specific text.    
+        -> href - hyplink reference
+        -> adding pages to html file by using <a> tag.
+                -> creating pages in same folder
+               
