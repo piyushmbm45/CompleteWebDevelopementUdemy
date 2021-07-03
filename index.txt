@@ -90,3 +90,18 @@ Lecture 6.
                 -> thead
                 -> tbody
                 -> tfoot
+
+Lecture 7. 
+        -> html forms
+                -> input type 
+                        -> text
+                        -> password
+                        -> email
+                        -> range
+                        -> radio
+                        -> submit
+                        -> number
+                        -> Date
+                        etc.
+        -> Hosting Personal Site using Github page
+        -> HTML completed.
