@@ -126,3 +126,13 @@
         - so better to use internal css
         - before applying any css by us browser applies by default css to every element
         - learnt about border properties
+
+## Lecture 9.
+        - external css
+        - changing the color of text/background
+        - selecting color form colorhunt.co
+        - finding error in code by using inspect or developer tool for css file
+        - priority of css 
+                - inline
+                - internal
+                - external
