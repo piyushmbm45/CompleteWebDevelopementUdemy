@@ -120,4 +120,9 @@
 
 ## Lecture 8.
         - in line css
-        - 
+        - not a good idea 
+        - if we want to change multiple items using same style then we need to copy paste again and again
+
+        - so better to use internal css
+        - before applying any css by us browser applies by default css to every element
+        - learnt about border properties
