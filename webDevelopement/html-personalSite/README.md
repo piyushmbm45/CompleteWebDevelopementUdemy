@@ -141,14 +141,14 @@
 
 ## Lecture 9.
 
-        - external css
-        - changing the color of text/background
-        - selecting color form colorhunt.co
-        - finding error in code by using inspect or developer tool for css file
-        - priority of css 
-                - inline
-                - internal
-                - external
+- external css
+- changing the color of text/background
+- selecting color form colorhunt.co
+- finding error in code by using inspect or developer tool for css file
+- priority of css 
+        - inline
+        - internal
+        - external
 
 ## Lecture 10.
 
