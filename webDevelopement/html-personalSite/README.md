@@ -1,4 +1,5 @@
 # Hi there,
+
     - In this course we have learnt about Html 
     - I've created my personal web site using only html 
 
@@ -6,6 +7,7 @@
 # This is the List of Lectures 
 
 ## vscode extensions
+
     - ESLint
     - Color Highlight
     - EJS language support
@@ -16,7 +18,9 @@
 ## Html - Hypertext Markup Language 
 
 ### Date : 1-7-2021
+
 ## Lecture 1. 
+
         - Introduction To HTML
         - Markup language - we mark on data to present in specific manner
                 - for eg. In any book or ads we see some *(star mark) 
@@ -37,6 +41,7 @@
 
 
 ## Lecture 2. 
+
         - Anatomy of HTML Tag
         - start tag and ending tag depends on html elements
         - some of the html elements does not have any content like <br>
@@ -48,6 +53,7 @@
 ### Date : 2-7-2021
 
 ## Lecture 3.
+
         - Starting a web developement course
         - Boilerplate - fix code that used by every html file
         - Doctype - sets the type of file to html or we can say that it tells the browser that its execute as a html file
@@ -63,6 +69,7 @@
 
 
 ## Lecture 4. 
+
         - adding heading to personal site h1
         - paragrapgh - <p>
         - how to italics - <i>
@@ -76,6 +83,7 @@
 ### Date 3-7-2021
 
 ## Lecture 5.
+
         - ordered and unordered list
         - nesting of list - list inside list
         - for ordered list we define how it will start by using type
@@ -89,6 +97,7 @@
                
 
 ## Lecture 6. 
+
         - learn about creating table
         - html - structure
         - css - styling
@@ -101,6 +110,7 @@
                 - tfoot
 
 ## Lecture 7. 
+
         - html forms
                 - input type 
                         - text
@@ -115,10 +125,12 @@
         - Hosting Personal Site using Github page
         - HTML completed.
 
+### Date 4-7-2021
 
 # CSS - Cascade Style Sheet
 
 ## Lecture 8.
+
         - in line css
         - not a good idea 
         - if we want to change multiple items using same style then we need to copy paste again and again
@@ -128,6 +140,7 @@
         - learnt about border properties
 
 ## Lecture 9.
+
         - external css
         - changing the color of text/background
         - selecting color form colorhunt.co
@@ -136,3 +149,9 @@
                 - inline
                 - internal
                 - external
+
+## Lecture 10.
+
+        - More about external css
+        - format of any css style ***selector{property:value}
+
