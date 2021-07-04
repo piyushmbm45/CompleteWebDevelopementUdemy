@@ -1,4 +1,4 @@
-Hey There, In this i'm learning about all the important tools/languages/framework which require to become Full stack web developer.
+Hey There, In this i'm learning about all the important tools/languages/framework which requires to become Full stack web developer.
 Course : Udemy
 Course Instructor : Dr. Angela Yu
 Lectures: 440
