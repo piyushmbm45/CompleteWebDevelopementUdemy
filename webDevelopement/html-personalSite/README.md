@@ -13,6 +13,8 @@
     - Prettier - Code formatter
     - stylelint-plus
 
+## Html - Hypertext Markup Language 
+
 ### Date : 1-7-2021
 ## Lecture 1. 
         - Introduction To HTML
@@ -112,3 +114,10 @@
                         etc.
         - Hosting Personal Site using Github page
         - HTML completed.
+
+
+# CSS - Cascade Style Sheet
+
+## Lecture 8.
+        - in line css
+        - 
