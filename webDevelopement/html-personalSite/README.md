@@ -153,5 +153,5 @@
 ## Lecture 10.
 
         - More about external css
-        - format of any css style ***selector{property:value}
+        - format of any css style ***selector{property:value}***
 
