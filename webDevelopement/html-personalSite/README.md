@@ -141,18 +141,21 @@
 
 ## Lecture 9.
 
-        - external css
-        - changing the color of text/background
-        - selecting color form colorhunt.co
-        - finding error in code by using inspect or developer tool for css file
-        - priority of css 
-                - inline
-                - internal
-                - external
+- external css
+- changing the color of text/background
+- selecting color form colorhunt.co
+- finding error in code by using inspect or developer tool for css file
+- priority of css 
+        - inline
+        - internal
+        - external
 
 ## Lecture 10.
 
 - More about external css
 - format of any css style 
 ***selector{property:value}***
+- try to put all properties in alphabetical order it will help you to debug code easiy
+- use class and ids to change specific element
+
 
