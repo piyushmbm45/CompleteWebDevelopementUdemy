@@ -166,4 +166,32 @@
 
 - start creating a professional personal site
 - add favicon to your site
-- 
+- use css debug tool(chrome extension) to see layout of site
+- use control + hover to see the details of element
+- Box Model
+        - 1.margin 2.border 3.padding  4.width/height of element
+
+
+## Lecture 12.
+
+- Display Property
+
+        * display has 4 property
+
+                * block
+                * inline
+                * inline-block
+                * none
+
+- some of elements like
+        * headers
+        * forms
+        * paragraph
+        * div
+        * list and list items
+- always displayed in block level (These are also known as block level element)
+- these takes full width of the screen
+- blocking element
+
+- if we set display as inline ----- then we can't adjust the width of the block.
+- if we set display as block ------ then we can't show the content side by side.
