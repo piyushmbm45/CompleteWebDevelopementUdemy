@@ -205,4 +205,16 @@
 - display : none - hide the element from site
 - visibility : hidden - hide the element from site but place is present
 
--
+
+## Lecture 13.
+
+- css positioning
+- position
+        - static -> by default all elements are static
+        - relative -> position of element relative to its current position(static - default)
+        - absolute
+        - none
+
+- relative positioning means that you are adding a margin relative to where the element should have been.
+
+- absolute position means that you are adding a margin to its parent element
