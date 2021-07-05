@@ -162,6 +162,8 @@
 - some pseudo classess are already defined to perform specific task
 - like h1:hover
 
+### Date 4-7-2021
+
 ## Lexture 11.
 
 - start creating a professional personal site
@@ -195,3 +197,12 @@
 
 - if we set display as inline ----- then we can't adjust the width of the block.
 - if we set display as block ------ then we can't show the content side by side.
+        - so its a problem 
+        - to remove this use inline-block
+
+- images are by default inline-block
+
+- display : none - hide the element from site
+- visibility : hidden - hide the element from site but place is present
+
+-
