@@ -162,3 +162,8 @@
 - some pseudo classess are already defined to perform specific task
 - like h1:hover
 
+## Lexture 11.
+
+- start creating a professional personal site
+- add favicon to your site
+- 
