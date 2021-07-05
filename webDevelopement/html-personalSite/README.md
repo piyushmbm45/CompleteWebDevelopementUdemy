@@ -157,5 +157,8 @@
 ***selector{property:value}***
 - try to put all properties in alphabetical order it will help you to debug code easiy
 - use class and ids to change specific element
-
+- id is unique
+- many elements can have same class
+- some pseudo classess are already defined to perform specific task
+- like h1:hover
 
