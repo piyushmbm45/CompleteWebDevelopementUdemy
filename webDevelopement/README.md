@@ -238,3 +238,10 @@
 - font family
 
         - embed google fonts into our html site
+        - dyanmically change in font size
+        - 1em = 100% = 16px
+        - % and em are inherited property of parent 
+                - if parent font is 2em and child font is 3em then you will see child font 6em.
+        - to remove this use rem
+
+- Use rem always
