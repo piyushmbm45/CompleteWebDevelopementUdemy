@@ -146,6 +146,7 @@
 - selecting color form colorhunt.co
 - finding error in code by using inspect or developer tool for css file
 - priority of css 
+
         - inline
         - internal
         - external
@@ -186,6 +187,7 @@
                 * none
 
 - some of elements like
+
         * headers
         * forms
         * paragraph
@@ -197,6 +199,7 @@
 
 - if we set display as inline ----- then we can't adjust the width of the block.
 - if we set display as block ------ then we can't show the content side by side.
+
         - so its a problem 
         - to remove this use inline-block
 
@@ -210,6 +213,7 @@
 
 - css positioning
 - position
+
         - static -> by default all elements are static
         - relative -> position of element relative to its current position(static - default)
         - absolute
@@ -218,3 +222,15 @@
 - relative positioning means that you are adding a margin relative to where the element should have been.
 
 - absolute position means that you are adding a margin to its parent element
+
+## Date 6-7-2021
+
+## Lecture 14.
+
+- So just to recap, text-align center inside the container, or the parent element, will center everything inside that doesn't have a width set. Now if it is a block element and it has a width set, then you're going to have to center it using this auto value in the margin.
+
+        - like this 
+                .h1 {
+                width: 10%;
+                margin: 0 auto 0 auto;
+                }

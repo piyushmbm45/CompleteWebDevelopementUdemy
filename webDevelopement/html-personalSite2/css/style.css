@@ -1,25 +1,24 @@
-body{
-    margin: 0;
-}
-h1{
-    margin: 0;
-}
-
-.top-container{
-    background-color: #E8FFFF;
+body {
+  margin: 0px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
 }
 
-.middle-container{
-    background-color: blue;
-    height: 200px;
-    width: 200px;
+.top-container {
+  background-color: lightblue;
+  position: relative;
+  padding-top: 100px;
 }
 
-.bottom-container{
-    background-color: rgb(207, 34, 155);
-    height: 200px;
-    width: 200px;
+
+.cloud1 {
+  position: absolute;
+right: 300px;
+top: 50px;
 }
-.stack{
-    text-decoration: underline;
+.cloud2 {
+  position: absolute;
+  bottom: 300px;
+  left: 300px;
 }
