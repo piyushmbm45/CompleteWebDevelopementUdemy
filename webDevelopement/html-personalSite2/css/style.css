@@ -24,7 +24,7 @@ a {
 }
 
 .top-container {
-  background-color: rgb(223, 242, 248);
+  background-color: #e4f9f5;
   position: relative;
   padding-top: 100px;
 }
@@ -39,4 +39,20 @@ a {
   position: absolute;
   bottom: 300px;
   left: 300px;
+}
+
+
+/* for Skill Section */
+
+.skill-row{
+    width: 50%;
+    margin: 100px auto 100px auto;
+    text-align: left;
+    line-height: 2;
+}
+.js{
+    width: 25%;
+}
+.express{
+    width: 25%;
 }
