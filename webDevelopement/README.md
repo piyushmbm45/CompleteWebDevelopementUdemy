@@ -234,3 +234,7 @@
                 width: 10%;
                 margin: 0 auto 0 auto;
                 }
+
+- font family
+
+        - embed google fonts into our html site
