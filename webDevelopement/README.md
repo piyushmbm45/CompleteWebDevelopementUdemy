@@ -245,3 +245,4 @@
         - to remove this use rem
 
 - Use rem always
+- use float only for wrapping the text dont use it for positioning

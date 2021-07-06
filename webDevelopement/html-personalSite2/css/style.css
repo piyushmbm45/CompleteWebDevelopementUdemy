@@ -41,18 +41,79 @@ a {
   left: 300px;
 }
 
+/* Profile Section */
+.profile {
+  margin: 4rem;
+}
+
+.profile-para {
+  width: 30%;
+  margin: 0 auto;
+}
+.hori {
+  height: 0;
+  width: 10%;
+  border: solid rgba(0, 0, 0, 0.651) 6px;
+  border-style: dotted none none;
+}
 
 /* for Skill Section */
+.skills {
+  margin: 4rem;
+}
+.skill-row {
+  width: 50%;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  line-height: 2;
+}
+.js-image {
+  width: 25%;
+  float: left;
+  margin-right: 30px;
+}
+.express-image {
+  width: 25%;
+  float: right;
+  margin-left: 25px;
+}
 
-.skill-row{
-    width: 50%;
-    margin: 100px auto 100px auto;
-    text-align: left;
-    line-height: 2;
+/* Contact section */
+
+.contact-me{
+    padding-top: 42px;
+    padding-bottom: 112px;
 }
-.js{
-    width: 25%;
+
+.contact-para {
+  width: 40%;
+  margin: 0 auto 0 auto;
 }
-.express{
-    width: 25%;
+.btn {
+  background-color: #45b29a;
+  text-decoration: none;
+  color: #1b7f69;
+  padding: 20px;
+  margin: 1.2rem;
+  display: inline-block;
+}
+
+
+/* footer */
+
+.bottom-container{
+    background-color: #66bfbf;
+    padding: 2rem;
+}
+.footer-link{
+    text-decoration: none;
+    margin: 0 2rem 0 0;
+}
+.footer-para{
+    color: #45b29a;
+    font-size: 12px;
+    margin-top: 2rem;
+}
+.name{
+    text-decoration: underline;
 }
