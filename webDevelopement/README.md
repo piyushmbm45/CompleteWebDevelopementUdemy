@@ -223,7 +223,7 @@
 
 - absolute position means that you are adding a margin to its parent element
 
-## Date 6-7-2021
+### Date 6-7-2021
 
 ## Lecture 14.
 
@@ -246,3 +246,11 @@
 
 - Use rem always
 - use float only for wrapping the text dont use it for positioning
+
+
+### Date 7-7-2021
+
+## Lecture 15.
+
+- starting Java Script
+- A language that power the web
