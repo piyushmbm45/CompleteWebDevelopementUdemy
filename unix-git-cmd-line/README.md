@@ -10,7 +10,9 @@
 - GUI hide many complicated things
 
 
-- Commands to Remember
+### Commands to Remember
+
+- playing with command line
     - ls   = list of all files/folders in selected directory
     - cd  <foldername>/ = change directory ( tab and forward slash completes the folder 😊)
     - cd ~  = back to the root directory
