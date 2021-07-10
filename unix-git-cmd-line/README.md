@@ -86,4 +86,50 @@
 
 - working diretory(untracked or unstaged) - stage - commit stage(Local Repo) - Remote Repo
 
-- 
+
+### gitignore
+
+- it is always advised to not to public cofidential data to github(remote repo)
+
+
+- .DS_Store (hidden file) saves your icon style, folder style, icon place etc. so add this file to gitignore also
+
+- add files to .gitignore to not to upload remote
+
+### cloning
+- cloning a remote repo to loacl repo
+    - git clone <github_url>
+
+
+### Branching
+
+#### In Local repo
+
+- to create a new branch 
+    - git branch <name_of_the_branch>
+
+- to check on which branch we are working or how many branches we have
+    - git branch
+    - "*" mark branch is our working branch
+
+- to switch the branch
+    - git checkout <branch_name>
+
+- to merge branches 
+    - git merge <branch_name>
+    - this will merge code the <branch_name> to working branch
+    - after entering - edit box will open to ask you for the name of the merge
+    - to quit this type ---> q!
+
+
+#### Remote Repo
+
+- its a simple process you can easily learn from website
+
+
+
+### Forking
+
+- somebody copies our repo to his/her own github account
+    - this is not cloning (cloning is for local repo for the same account)
+
