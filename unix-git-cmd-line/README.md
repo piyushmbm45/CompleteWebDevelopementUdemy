@@ -76,4 +76,14 @@
 
 - to rollback or revert to older file from stage 
     - git checkout <filename>
-    
+
+- to setup local repo to remote repo(github) we need to firstly create repo on git hub website - copy the url of github repo
+    - git remote add origin <url>
+    - this will initiate the repo to github
+
+- to push the repo to git hub
+    - git push -u origin master
+
+- working diretory(untracked or unstaged) - stage - commit stage(Local Repo) - Remote Repo
+
+- 
