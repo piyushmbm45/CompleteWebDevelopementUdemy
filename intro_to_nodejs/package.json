@@ -1,0 +1,15 @@
+{
+  "name": "intro_to_nodejs",
+  "version": "1.0.0",
+  "description": "- how to install node js - nodejs already have many native modules/packages - if we want some other modules then we need to install NPM package manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "superheroes": "^3.0.0"
+  }
+}
