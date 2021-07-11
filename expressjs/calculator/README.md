@@ -1,6 +1,6 @@
 ## Calculator
 
-#### multiplying two numbers
+#### adding two numbers
 
 - we can send file by using get request
 - use network section in inspect to see what data person entering or many more thing
