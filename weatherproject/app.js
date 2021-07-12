@@ -15,9 +15,12 @@ app.get("/", (req, res) => {
       const temp = weatherData.main.temp;
       const feelLike = weatherData.main.feels_like;
       const descri = weatherData.weather[0].description;
+      const icon = weatherData.weather[0].icon;
+      const imageUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
       //   console.log(descri);
       res.write(`<h1>The temperature in London is ${temp} °C. </h1>`);
       res.write(`<p>The weather is currently ${descri}</p><br>`);
+      res.write(`<img src=${imageUrl} alt='icon1'>`);
       res.write(`<p>The weather is Feel Like ${feelLike}</p>`);
       res.send();
       // res.end();
