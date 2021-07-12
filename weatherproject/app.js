@@ -1,13 +1,31 @@
-const { response } = require("express");
 const express = require("express");
 const https = require("http");
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// fetch the data from the site(Body)
+// body-parser
 
 app.get("/", (req, res) => {
-  res.setHeader("Content-Type", "text/html");
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.post("/", (req, res) => {
+  let city = req.body.cityName; // to use this we need to fetch body data
+  console.log(city);
+
+  const query = city;
+  const apiKey = "99a6930370afa07740f1c344aad5b588";
+  const unit = "metric";
   const url =
-    "http://api.openweathermap.org/data/2.5/weather?q=London&appid=99a6930370afa07740f1c344aad5b588&units=metric";
+    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    query +
+    "&appid=" +
+    apiKey +
+    "&units=" +
+    unit +
+    "";
   https.get(url, (response) => {
     // console.log(response);
     response.on("data", (data) => {
@@ -18,7 +36,7 @@ app.get("/", (req, res) => {
       const icon = weatherData.weather[0].icon;
       const imageUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
       //   console.log(descri);
-      res.write(`<h1>The temperature in London is ${temp} °C. </h1>`);
+      res.write(`<h1>The temperature in ${city} is ${temp} °C. </h1>`);
       res.write(`<p>The weather is currently ${descri}</p><br>`);
       res.write(`<img src=${imageUrl} alt='icon1'>`);
       res.write(`<p>The weather is Feel Like ${feelLike}</p>`);
@@ -28,4 +46,4 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log("listening on Port 3000"));
+app.listen(3331, () => console.log("listening on Port 3331"));
