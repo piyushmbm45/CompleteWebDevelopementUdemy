@@ -14,6 +14,20 @@ app.post("/",(req,res)=>{
     const lName = req.body.LastName;
     const eMail = req.body.email;
     console.log(`${fName} ${lName} ${eMail}`);
-})
+
+    let data = {
+        members: [
+            {
+                email_address: email,
+                status: "subscribed",
+                merge_fields: {
+                    FNAME : fName,
+                    LNAME : lName
+                }
+            }
+        ]
+    }
+    const jsonData = JSON.stringify(data)
+});
 
 app.listen(3000, () => console.log("Listening On port 3000"));
