@@ -7,30 +7,35 @@ app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
   const today = new Date();
-    let day = "";
-  if (today.getDay() === 0) {
-    day = "Sunday";
-  } else if(today.getDay() === 1) {
-    day = "Monday";
-
-  } else if (today.getDay() === 2){
-    day = "Tuesday";
-
-  } else if (today.getDay() === 3){
-    day = "Wednesday";
-
-  }else if (today.getDay() === 4){
-    day = "Thursday";
-
-  } else if (today.getDay() === 5){
-    day = "Friday";
-
-  } else{
-    day = "Saturday";
+  const currDay = today.getDay();
+  let day = "";
+  switch (currDay) {
+    case 0:
+      day = "Sunday";
+      break;
+    case 1:
+      day = "Monday";
+      break;
+    case 2:
+      day = "Tuesday";
+      break;
+    case 3:
+      day = "Wednesday";
+      break;
+    case 4:
+      day = "Thursday";
+      break;
+    case 5:
+      day = "Friday";
+      break;
+    case 6:
+      day = "Saturday";
+      break;
+    default:
+    console.log(`Error : The current Day is ${currDay}`);
   }
 
-  
-res.render("list",{kindOfDay : day});
+  res.render("list", { kindOfDay: day });
 });
 
 const port = process.env.PORT || 3000;
