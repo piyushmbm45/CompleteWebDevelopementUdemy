@@ -2,6 +2,8 @@ const express = require("express");
 const ejs = require("ejs");
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
@@ -14,10 +16,21 @@ app.get("/", (req, res) => {
     // year: "numeric",
   };
 
-  const day = today.toLocaleDateString("en-US",options);
+  const day = today.toLocaleDateString("en-US", options);
 
   res.render("list", { kindOfDay: day });
 });
+
+
+
+app.post("/", (req, res) => {
+  const data = req.body.newItem;
+  res.render("list",{newData : data});
+  console.log(data);
+});
+
+
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on Port ${port}`));
