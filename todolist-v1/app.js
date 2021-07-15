@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
-var data = "";
+var items = [];
 app.get("/", (req, res) => {
   const today = new Date();
   const options = {
@@ -18,13 +18,15 @@ app.get("/", (req, res) => {
 
   const day = today.toLocaleDateString("en-US", options);
 
-  res.render("list", { kindOfDay: day, newListItem: data });
+  res.render("list", { kindOfDay: day, newListItems: items });
 });
 
 app.post("/", (req, res) => {
-  data = req.body.newItem;
+  const item = req.body.newItem;
+  items.push(item);
+
   res.redirect("/");
-  console.log(data);
+  // console.log(data);
 });
 
 const port = process.env.PORT || 3000;
