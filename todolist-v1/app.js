@@ -4,9 +4,10 @@ const ejs = require("ejs");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.set("view engine", "ejs");
-var items = [];
+var items = ["Buy Food", "Cook Food", "Eat Food"];
 app.get("/", (req, res) => {
   const today = new Date();
   const options = {
