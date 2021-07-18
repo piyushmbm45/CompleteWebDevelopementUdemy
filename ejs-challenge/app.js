@@ -33,6 +33,18 @@ app.get("/contact",(req,res)=>{
   res.render("contact.ejs",{contact: contactContent});
 })
 
+// compose route
+app.get("/compose",(req,res)=>{
+  res.render("compose.ejs");
+})
+
+// post route for compose
+app.post("/compose",(request,res)=>{
+  const post = {
+    title: request.body.postTitle,
+    body : request.body.postBody,
+  }
+})
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
