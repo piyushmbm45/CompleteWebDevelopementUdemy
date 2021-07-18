@@ -33,6 +33,7 @@ app.get("/contact",(req,res)=>{
   res.render("contact.ejs",{contact: contactContent});
 })
 
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
