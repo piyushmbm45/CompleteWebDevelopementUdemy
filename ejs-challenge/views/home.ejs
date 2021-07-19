@@ -1,6 +1,12 @@
-<%- include("partials/header"); %> 
+<%- include("partials/header"); %>
 
-<h1>Home</h1>
-<p><%= homeContent %> </p>
-
-<%- include("partials/footer"); %> 
+    <h1>Home</h1>
+    <p>
+        <%= homeContent %>
+    </p>
+    <% let num=postContent.length; %>
+        <% for(let i=0; i<num ;i++){ %>
+            <% const body=postContent[i].body; %>
+                <% console.log(body);%>
+                    <% } %>
+                        <%- include("partials/footer"); %>

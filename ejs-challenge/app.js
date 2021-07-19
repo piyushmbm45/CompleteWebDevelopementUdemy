@@ -17,10 +17,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-
+let posts = [];
 // homepage route 
 app.get("/", (req, res) => {
-  res.render("home.ejs", { homeContent: homeStartingContent });
+  res.render("home.ejs", { homeContent: homeStartingContent, postContent: posts });
 });
 
 // about page route
@@ -40,10 +40,12 @@ app.get("/compose",(req,res)=>{
 
 // post route for compose
 app.post("/compose",(request,res)=>{
-  const post = {
+  let post = {
     title: request.body.postTitle,
     body : request.body.postBody,
-  }
+  };
+  posts.push(post);
+  res.redirect("/")
 })
 
 const port = process.env.PORT || 3000;
