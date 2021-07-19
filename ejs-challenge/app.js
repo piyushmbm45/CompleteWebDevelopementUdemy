@@ -23,6 +23,8 @@ app.get("/", (req, res) => {
   res.render("home.ejs", { homeContent: homeStartingContent, postContent: posts });
 });
 
+
+
 // about page route
 app.get("/about",(req,res)=>{
   res.render("about.ejs", {about : aboutContent});
@@ -47,6 +49,20 @@ app.post("/compose",(request,res)=>{
   posts.push(post);
   res.redirect("/")
 })
+
+// dynamically changing website url
+app.get("/posts/:postName",(req,res)=>{
+
+  const query = req.params.postName;
+  posts.forEach((post)=>{
+    if(query === post.title){
+      console.log("Match Found");
+    }else{
+      console.log("Ohoo Try Again");
+    }
+  });
+});
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
