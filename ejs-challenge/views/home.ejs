@@ -5,8 +5,15 @@
         <%= homeContent %>
     </p>
     <% let num=postContent.length; %>
-        <% for(let i=0; i<num ;i++){ %>
-            <% const body=postContent[i].body; %>
-                <% console.log(body);%>
-                    <% } %>
-                        <%- include("partials/footer"); %>
+        <% postContent.forEach((ele,ind)=>{ %>
+            <h1>
+                <%= postContent[ind].title %> 
+            </h1>
+            <p>
+                <%= postContent[ind].body %> 
+
+            </p>
+            <% console.log(postContent[ind].title); %>
+                <% }) %>
+                
+                    <%- include("partials/footer"); %>
