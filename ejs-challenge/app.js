@@ -19,52 +19,54 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 let posts = [];
-// homepage route 
+// homepage route
 app.get("/", (req, res) => {
-  res.render("home.ejs", { homeContent: homeStartingContent, postContent: posts });
-});
-
-
-
-// about page route
-app.get("/about",(req,res)=>{
-  res.render("about.ejs", {about : aboutContent});
-})
-
-// contact page route
-app.get("/contact",(req,res)=>{
-  res.render("contact.ejs",{contact: contactContent});
-})
-
-// compose route
-app.get("/compose",(req,res)=>{
-  res.render("compose.ejs");
-})
-
-// post route for compose
-app.post("/compose",(request,res)=>{
-  let post = {
-    title: request.body.postTitle,
-    body : request.body.postBody,
-  };
-  posts.push(post);
-  res.redirect("/")
-})
-
-// dynamically changing website url
-app.get("/posts/:postName",(req,res)=>{
-
-  const query = req.params.postName;
-  posts.forEach((post)=>{
-    const reqTitle = lodash.kebabCase(post.title)
-    if(query === reqTitle){
-      console.log("Match Found");
-    }else{
-      console.log("Ohoo Try Again");
-    }
+  res.render("home.ejs", {
+    homeContent: homeStartingContent,
+    postContent: posts,
   });
 });
 
+// about page route
+app.get("/about", (req, res) => {
+  res.render("about.ejs", { about: aboutContent });
+});
+
+// contact page route
+app.get("/contact", (req, res) => {
+  res.render("contact.ejs", { contact: contactContent });
+});
+
+// compose route
+app.get("/compose", (req, res) => {
+  res.render("compose.ejs");
+});
+
+// post route for compose
+app.post("/compose", (request, res) => {
+  let post = {
+    title: request.body.postTitle,
+    body: request.body.postBody,
+  };
+  posts.push(post);
+  res.redirect("/");
+});
+
+// dynamically changing website url
+// sending data to post.ejs file if match found
+app.get("/posts/:postName", (req, res) => {
+  const query = req.params.postName;
+  posts.forEach((post) => {
+    const title = post.title;
+    const body = post.body;
+    const reqTitle = lodash.kebabCase(post.title);
+    console.log(reqTitle);
+    if (query === reqTitle) {
+      res.render("post.ejs", { postTitle: title, postContent: body });
+      console.log("Match Found");
+    }
+  });
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
