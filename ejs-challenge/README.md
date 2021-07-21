@@ -1,4 +1,4 @@
-## Daily Jurnal - Project
+## Daily Journal - Project
 ### In this project we designed a website which shows your day by day things.
 
 - Used routes 
@@ -20,4 +20,4 @@
         - nodemon
         - lodash
 
-#### Thanks For Visit
+#### Thank You
