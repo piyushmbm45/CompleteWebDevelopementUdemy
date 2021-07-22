@@ -4,7 +4,10 @@ mongoose.connect("mongodb://localhost:27017/fruitsDB",{ useNewUrlParser: true,
 useUnifiedTopology: true});
 
 const fruitSchema = new mongoose.Schema({
-  name: String,
+  name: {
+      type: String,
+      required: true
+  },
   rating: {
       type: Number,
       min: 1,
@@ -15,14 +18,27 @@ const fruitSchema = new mongoose.Schema({
 
 const Fruit = mongoose.model("Fruit", fruitSchema);
 
+// const fruit = new Fruit({
+
+//   rating: 11,
+//   review: "Pretty Solid",
+// });
+
+// fruit.save();
+
+// defining new fruit without name and checking its validation
+
 const fruit = new Fruit({
-  name: "Apple",
-  rating: 11,
-  review: "Pretty Solid",
-});
-
-fruit.save();
-
+    rating: 9,
+    review: "Very Good"
+})
+fruit.save((err)=>{
+    if(err){
+        console.log("Name is Required");
+    }else{
+        console.log("Successfully inserted data");
+    }
+})
 // const personSchema = new mongoose.Schema({
 //   name: String,
 //   age: Number,
