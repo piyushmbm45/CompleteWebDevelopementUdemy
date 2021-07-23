@@ -14,7 +14,7 @@
 //     audio.play();
 // })
 
-// // 3. 
+// // 3.
 // const btn3 = document.querySelector(".s");
 
 // btn3.addEventListener("click",()=>{
@@ -31,7 +31,7 @@
 //     audio.play();
 // })
 
-// // 5. 
+// // 5.
 
 // const btn5 = document.querySelector(".j");
 
@@ -40,8 +40,7 @@
 //     audio.play();
 // })
 
-
-// // 6. 
+// // 6.
 
 // const btn6 = document.querySelector(".k");
 
@@ -59,12 +58,49 @@
 //     audio.play();
 // })
 
-
-
 const btnNum = document.querySelectorAll(".drum").length;
 
-for(let i=0;i<=btnNum;i++){
-    document.querySelectorAll(".drum")[i].addEventListener("click",()=>{
-            const audio = new Audio(`sounds/${i}.mp3`)
-            audio.play();
-    })};
+for (let i = 0; i < btnNum; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", () => {
+    const audio = new Audio(`sounds/${i}.mp3`);
+    audio.play();
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  let keyb = event.key;
+
+  switch (keyb) {
+    case "w":
+      var audio1 = new Audio("sounds/0.mp3");
+      audio1.play();
+      break;
+    case "a":
+      var audio1 = new Audio("sounds/1.mp3");
+      audio1.play();
+      break;
+    case "s":
+      var audio1 = new Audio("sounds/2.mp3");
+      audio1.play();
+      break;
+    case "d":
+      var audio1 = new Audio("sounds/3.mp3");
+      audio1.play();
+      break;
+    case "j":
+      var audio1 = new Audio("sounds/4.mp3");
+      audio1.play();
+      break;
+    case "k":
+      var audio1 = new Audio("sounds/5.mp3");
+      audio1.play();
+      break;
+    case "l":
+      var audio1 = new Audio("sounds/6.mp3");
+      audio1.play();
+      break;
+    default:
+      console.log(keyb);
+      break;
+  }
+});
