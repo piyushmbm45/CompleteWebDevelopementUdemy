@@ -62,15 +62,28 @@ const btnNum = document.querySelectorAll(".drum").length;
 
 for (let i = 0; i < btnNum; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", () => {
-    const audio = new Audio(`sounds/${i}.mp3`);
-    audio.play();
+    var buttonInnerHtml = document.querySelectorAll("button")[i].innerHTML;
+    buttonAnimation(buttonInnerHtml);
+    makeSound(buttonInnerHtml);
   });
 }
-
 document.addEventListener("keydown", (event) => {
-  let keyb = event.key;
+  buttonAnimation(event.key);
 
-  switch (keyb) {
+  makeSound(event.key);
+});
+
+function buttonAnimation(btn) {
+  var buttonAc = document.querySelector(`.${btn}`);
+  buttonAc.classList.add("pressed");
+  setTimeout(() => {
+    var buttonAc = document.querySelector(`.${btn}`);
+    buttonAc.classList.remove("pressed");
+  },200);
+}
+
+function makeSound(key) {
+  switch (key) {
     case "w":
       var audio1 = new Audio("sounds/0.mp3");
       audio1.play();
@@ -100,7 +113,7 @@ document.addEventListener("keydown", (event) => {
       audio1.play();
       break;
     default:
-      console.log(keyb);
+      console.log(key);
       break;
   }
-});
+}
