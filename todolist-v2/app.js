@@ -9,7 +9,7 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost:27017/todolistDB", {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 app.set("view engine", "ejs");
 
@@ -29,30 +29,27 @@ const item3 = new Item({
   name: "<-- Hit This to delete an item.",
 });
 
-const defaultItems = [item1,item2,item3];
+const defaultItems = [item1, item2, item3];
 
-
-Item.insertMany(defaultItems,(err)=>{
-  if(err){
-    console.log(err);
-  }else{
-    console.log("Items successfully Inseted");
-  }
-});
-
+// Item.insertMany(defaultItems,(err)=>{
+//   if(err){
+//     console.log(err);
+//   }else{
+//     console.log("Items successfully Inseted");
+//   }
+// });
 
 app.get("/", (req, res) => {
-  const today = new Date();
-  const options = {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    // year: "numeric",
-  };
+  
+  Item.find({}, (err, foundItems) => {
+    if (err) {
+      console.log(err);
+    } else {
+   res.render("list", { listTitle: "Today", newListItems: foundItems });
+      console.log(foundItems);
+    }
+  });
 
-  const day = today.toLocaleDateString("en-US", options);
-
-  res.render("list", { listTitle: "Today", newListItems: items });
 });
 
 app.post("/", (req, res) => {

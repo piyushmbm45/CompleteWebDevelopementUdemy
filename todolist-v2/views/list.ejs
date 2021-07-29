@@ -6,15 +6,14 @@
     </div>
 
     <div class="box">
-        <% for( let index=0; index < newListItems.length; index++ ) { %>
-
-            <div class="item">
-                <input type="checkbox">
-                <p>
-                    <%= newListItems[index] %>
-                </p>
-            </div>
-            <% } %>
+            <% newListItems.forEach(element => { %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p>
+                        <%= element.name %>
+                    </p>
+                </div>
+            <% }) %>
 
                 <form action="/" method="post" class="item">
                     <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
