@@ -31,25 +31,21 @@ const item3 = new Item({
 
 const defaultItems = [item1, item2, item3];
 
-// Item.insertMany(defaultItems,(err)=>{
-//   if(err){
-//     console.log(err);
-//   }else{
-//     console.log("Items successfully Inseted");
-//   }
-// });
-
 app.get("/", (req, res) => {
-  
   Item.find({}, (err, foundItems) => {
-    if (err) {
-      console.log(err);
+    if (foundItems.length === 0) {
+      Item.insertMany(defaultItems, (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("Items successfully Inseted");
+        }
+      });
+      res.redirect("/");
     } else {
-   res.render("list", { listTitle: "Today", newListItems: foundItems });
-      console.log(foundItems);
+      res.render("list", { listTitle: "Today", newListItems: foundItems });
     }
   });
-
 });
 
 app.post("/", (req, res) => {
