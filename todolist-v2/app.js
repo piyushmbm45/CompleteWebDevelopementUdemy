@@ -30,9 +30,9 @@ const item3 = new Item({
 });
 
 const defaultItems = [item1, item2, item3];
-
+let foundItems = [];
 app.get("/", (req, res) => {
-  Item.find({}, (err, foundItems) => {
+  Item.find({}, (err1, foundItems) => {
     if (foundItems.length === 0) {
       Item.insertMany(defaultItems, (err) => {
         if (err) {
@@ -49,15 +49,22 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  const item = req.body.newItem;
+  const itemName = req.body.newItem;
 
-  if (req.body.list === "Work") {
-    newItem.push(item);
-    res.redirect("/work");
-  } else {
-    items.push(item);
-    res.redirect("/");
-  }
+  const item4 = new Item({
+    name: itemName,
+  });
+
+  item4.save();
+
+  res.redirect("/");
+  // if (req.body.list === "Work") {
+  //   newItem.push(item);
+  //   res.redirect("/work");
+  // } else {
+  //   foundItems.push(item4);
+  //   res.redirect("/");
+  // }
 });
 
 app.get("/work", (req, res) => {
