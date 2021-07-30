@@ -6,6 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+// to use findByIDandRemove method of mongoose
+mongoose.set("useFindAndModify", false);
 
 mongoose.connect("mongodb://localhost:27017/todolistDB", {
   useNewUrlParser: true,
@@ -65,6 +67,19 @@ app.post("/", (req, res) => {
   //   foundItems.push(item4);
   //   res.redirect("/");
   // }
+});
+
+app.post("/delete", (req, res) => {
+  const checkedItem = req.body.checkbox;
+  console.log(checkedItem);
+  Item.findByIdAndRemove(checkedItem, (err) => {
+    if (!err) {
+      console.log("deleted");
+      res.redirect("/");
+    } else {
+      console.log(err);
+    }
+  });
 });
 
 app.get("/work", (req, res) => {
