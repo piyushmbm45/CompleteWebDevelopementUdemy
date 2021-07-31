@@ -57,17 +57,24 @@ app.get("/", (req, res) => {
     }
   });
 });
-
+// post route for inserting new item in a list
 app.post("/", (req, res) => {
   const itemName = req.body.newItem;
-
-  const item4 = new Item({
+  const listName = req.body.list;
+  const item = new Item({
     name: itemName,
   });
 
-  item4.save();
-
-  res.redirect("/");
+  if (listName === "Today") {
+    item.save();
+    res.redirect("/");
+  } else {
+    List.findOne({name: listName},(err,foundList)=>{
+      foundList.items.push(item);
+      foundList.save();
+      res.redirect(`/${listName}`)
+    })
+  }
 });
 
 app.post("/delete", (req, res) => {
@@ -98,11 +105,14 @@ app.get("/:id", (req, res) => {
         // one way to show list not hanging up after finding the lis
         // res.render("list", { listTitle: list.name, newListItems: list.items })
         // another way
-        res.redirect(`/${customListName}`)
+        res.redirect(`/${customListName}`);
         console.log("Doesn't Exist");
       } else {
         // showing the existing list
-        res.render("list", { listTitle: foundList.name, newListItems: foundList.items })
+        res.render("list", {
+          listTitle: foundList.name,
+          newListItems: foundList.items,
+        });
         console.log("Exist");
       }
     }
