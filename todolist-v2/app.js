@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 // to use findByIDandRemove method of mongoose
-mongoose.set("useFindAndModify", false);
+// mongoose.set("useFindAndModify", false);
 
 mongoose.connect("mongodb://localhost:27017/todolistDB", {
   useNewUrlParser: true,
@@ -40,7 +40,6 @@ const listSchema = {
 
 const List = mongoose.model("List", listSchema);
 
-let foundItems = [];
 app.get("/", (req, res) => {
   Item.find({}, (err1, foundItems) => {
     if (foundItems.length === 0) {
@@ -69,25 +68,37 @@ app.post("/", (req, res) => {
     item.save();
     res.redirect("/");
   } else {
-    List.findOne({name: listName},(err,foundList)=>{
+    List.findOne({ name: listName }, (err, foundList) => {
       foundList.items.push(item);
       foundList.save();
-      res.redirect(`/${listName}`)
-    })
+      res.redirect(`/${listName}`);
+    });
   }
 });
 
 app.post("/delete", (req, res) => {
-  const checkedItem = req.body.checkbox;
-  console.log(checkedItem);
-  Item.findByIdAndRemove(checkedItem, (err) => {
-    if (!err) {
-      console.log("deleted");
-      res.redirect("/");
-    } else {
-      console.log(err);
-    }
-  });
+  const checkedItemId = req.body.checkbox;
+  const listName = req.body.listName;
+
+  if(listName === 'Today'){
+    console.log("my hafh");
+    Item.findByIdAndRemove(checkedItemId, (err) => {
+      if (!err) {
+        console.log("deleted");
+        res.redirect("/");
+      }
+    });
+  } else {
+    List.findOneAndUpdate(
+      { name: listName },
+      { $pull: { items: { _id: checkedItemId } } },
+      (err, foundList) => {
+        if (!err) {
+          res.redirect('/'+listName);
+        }
+      }
+    );
+  }
 });
 
 app.get("/:id", (req, res) => {
