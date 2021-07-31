@@ -32,6 +32,14 @@ const item3 = new Item({
 });
 
 const defaultItems = [item1, item2, item3];
+
+const listSchema = {
+  name: String,
+  items: [itemsSchema],
+};
+
+const List = mongoose.model("List", listSchema);
+
 let foundItems = [];
 app.get("/", (req, res) => {
   Item.find({}, (err1, foundItems) => {
@@ -60,13 +68,6 @@ app.post("/", (req, res) => {
   item4.save();
 
   res.redirect("/");
-  // if (req.body.list === "Work") {
-  //   newItem.push(item);
-  //   res.redirect("/work");
-  // } else {
-  //   foundItems.push(item4);
-  //   res.redirect("/");
-  // }
 });
 
 app.post("/delete", (req, res) => {
@@ -82,12 +83,30 @@ app.post("/delete", (req, res) => {
   });
 });
 
-app.get("/work", (req, res) => {
-  res.render("list", { listTitle: "Work List", newListItems: newItem });
-});
+app.get("/:id", (req, res) => {
+  const customListName = req.params.id;
 
-app.get("/about", (req, res) => {
-  res.render("about");
+  List.findOne({ name: customListName }, (err, foundList) => {
+    if (!err) {
+      if (!foundList) {
+        // create a new list
+        const list = new List({
+          name: customListName,
+          items: defaultItems,
+        });
+        list.save();
+        // one way to show list not hanging up after finding the lis
+        // res.render("list", { listTitle: list.name, newListItems: list.items })
+        // another way
+        res.redirect(`/${customListName}`)
+        console.log("Doesn't Exist");
+      } else {
+        // showing the existing list
+        res.render("list", { listTitle: foundList.name, newListItems: foundList.items })
+        console.log("Exist");
+      }
+    }
+  });
 });
 
 const port = process.env.PORT || 3000;
