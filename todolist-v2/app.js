@@ -10,7 +10,7 @@ app.use(express.static("public"));
 // to use findByIDandRemove method of mongoose
 // mongoose.set("useFindAndModify", false);
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {
+mongoose.connect("mongodb+srv://piyushjain:hello12@cluster0.mgvev.mongodb.net/todolistDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -131,5 +131,9 @@ app.get("/:id", (req, res) => {
   });
 });
 
-const port = process.env.PORT || 3000;
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 app.listen(port, () => console.log(`Listening on Port ${port}`));
