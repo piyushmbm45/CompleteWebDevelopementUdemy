@@ -1,6 +1,7 @@
 const express = require("express");
 const ejs = require("ejs");
 const lodash = require("lodash");
+const mongoose = require("mongoose");
 
 const homeStartingContent =
   "Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
@@ -13,17 +14,29 @@ const contactContent =
 const app = express();
 
 app.set("view engine", "ejs");
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-let posts = [];
+// mongoDb connection for local
+mongoose.connect("mongodb://127.0.0.1:27017/blobDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const postsSchema = {
+  postTitle : String,
+  postBody : String
+}
+
+const Post = new mongoose.model("Post", postsSchema)
+
+let posts1 = [];
 // homepage route
 app.get("/", (req, res) => {
   res.render("home.ejs", {
     homeContent: homeStartingContent,
-    postContent: posts,
+    postContent: posts1,
   });
 });
 
@@ -44,11 +57,16 @@ app.get("/compose", (req, res) => {
 
 // post route for compose
 app.post("/compose", (request, res) => {
-  let post = {
+  let post1 = {
     title: request.body.postTitle,
     body: request.body.postBody,
   };
-  posts.push(post);
+  const post = new Post({
+    postTitle : post1.title,
+    postBody : post1.body
+  })
+  post.save()
+  posts1.push(post1);
   res.redirect("/");
 });
 
@@ -56,7 +74,7 @@ app.post("/compose", (request, res) => {
 // sending data to post.ejs file if match found
 app.get("/posts/:postName", (req, res) => {
   const query = req.params.postName;
-  posts.forEach((post) => {
+  posts1.forEach((post) => {
     const title = post.title;
     const body = post.body;
     const reqTitle = lodash.kebabCase(post.title);
