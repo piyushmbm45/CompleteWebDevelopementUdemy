@@ -1,6 +1,7 @@
 const express = require("express");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+const _ = require("lodash")
 
 const app = express();
 app.use(express.json());
@@ -102,7 +103,7 @@ app.post("/delete", (req, res) => {
 });
 
 app.get("/:id", (req, res) => {
-  const customListName = req.params.id;
+  const customListName = _.capitalize(req.params.id);
 
   List.findOne({ name: customListName }, (err, foundList) => {
     if (!err) {
