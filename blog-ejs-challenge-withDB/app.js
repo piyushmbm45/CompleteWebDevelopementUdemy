@@ -25,18 +25,20 @@ mongoose.connect("mongodb://127.0.0.1:27017/blobDB", {
 });
 
 const postsSchema = {
-  postTitle : String,
-  postBody : String
-}
+  postTitle: String,
+  postBody: String,
+};
 
-const Post = new mongoose.model("Post", postsSchema)
+const Post = new mongoose.model("Post", postsSchema);
 
-let posts1 = [];
 // homepage route
 app.get("/", (req, res) => {
-  res.render("home.ejs", {
-    homeContent: homeStartingContent,
-    postContent: posts1,
+
+  Post.find({}, (err, posts) => {
+    res.render("home.ejs", {
+      homeContent: homeStartingContent,
+      postContent: posts,
+    });
   });
 });
 
@@ -54,7 +56,7 @@ app.get("/contact", (req, res) => {
 app.get("/compose", (req, res) => {
   res.render("compose.ejs");
 });
-
+let posts1 = [];
 // post route for compose
 app.post("/compose", (request, res) => {
   let post1 = {
@@ -62,10 +64,10 @@ app.post("/compose", (request, res) => {
     body: request.body.postBody,
   };
   const post = new Post({
-    postTitle : post1.title,
-    postBody : post1.body
-  })
-  post.save()
+    postTitle: post1.title,
+    postBody: post1.body,
+  });
+  post.save();
   posts1.push(post1);
   res.redirect("/");
 });

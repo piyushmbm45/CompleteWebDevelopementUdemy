@@ -7,14 +7,12 @@
     <% let num=postContent.length; %>
         <% postContent.forEach((ele,ind)=>{ %>
             <h1>
-                <%= ele.title %>
+                <%= ele.postTitle %>
             </h1>
             <p>
-                <%= postContent[ind].body.substr(0,99) + "..." %>
+                <%=postContent[ind].postBody.substr(0,99) + "..."%>
                     <a href="/posts/<%=ele.title%>">Read More</a>
-
             </p>
-            <% console.log(postContent[ind].title); %>
                 <% }) %>
 
                     <%- include("partials/footer"); %>
