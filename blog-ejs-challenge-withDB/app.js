@@ -33,7 +33,6 @@ const Post = new mongoose.model("Post", postsSchema);
 
 // homepage route
 app.get("/", (req, res) => {
-
   Post.find({}, (err, posts) => {
     res.render("home.ejs", {
       homeContent: homeStartingContent,
@@ -67,24 +66,21 @@ app.post("/compose", (request, res) => {
     postTitle: post1.title,
     postBody: post1.body,
   });
-  post.save();
-  posts1.push(post1);
-  res.redirect("/");
+  post.save((err) => {
+    if (!err) {
+      posts1.push(post1);
+      res.redirect("/");
+    }
+  });
 });
 
 // dynamically changing website url
 // sending data to post.ejs file if match found
-app.get("/posts/:postName", (req, res) => {
-  const query = req.params.postName;
-  posts1.forEach((post) => {
-    const title = post.title;
-    const body = post.body;
-    const reqTitle = lodash.kebabCase(post.title);
-    console.log(reqTitle);
-    if (query === reqTitle) {
-      res.render("post.ejs", { postTitle: title, postContent: body });
-      console.log("Match Found");
-    }
+app.get("/posts/:id", (req, res) => {
+  const query = req.params.id;
+
+  Post.findOne({ _id: query }, (err,post) => {
+    res.render("post.ejs", { postTitle: post.postTitle, postContent: post.postBody });
   });
 });
 
