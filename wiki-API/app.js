@@ -24,6 +24,21 @@ const articleSchema = {
 }
 const Article = new mongoose.model('Article',articleSchema)
 
+// getting all the articles
+app.get('/articles',(req,res)=>{
+    Article.find({},(err,foundArticles)=>{
+        if(!err){
+            res.send(foundArticles)
+        }
+        else{
+            res.send(err)
+        }
+    })
+})
+
+
+
+
 app.listen(3000,()=>{
     console.log("listening on 3000");
 })
