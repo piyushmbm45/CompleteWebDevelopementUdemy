@@ -36,7 +36,7 @@ app.get('/articles',(req,res)=>{
     })
 })
 
-// post a article
+// post a new article
 app.post('/articles',(req,res)=>{
     
     const newArticle = new Article({
@@ -51,8 +51,21 @@ app.post('/articles',(req,res)=>{
             res.send(err)
         }
     });
-
 })
+
+// delete article or articles
+
+app.delete('/articles',(req,res)=>{
+    Article.deleteMany({},(err)=>{
+        if(!err){
+            res.send("all articles are successfull deleted");
+        }
+        else{
+            res.send(err);
+        }
+    })
+})
+
 
 
 
