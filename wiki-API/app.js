@@ -36,6 +36,23 @@ app.get('/articles',(req,res)=>{
     })
 })
 
+// post a article
+app.post('/articles',(req,res)=>{
+    
+    const newArticle = new Article({
+        title : req.body.title,
+        content : req.body.content
+    })
+    newArticle.save((err)=>{
+        if(!err){
+            res.send('Successfully send the new article')
+        }
+        else{
+            res.send(err)
+        }
+    });
+
+})
 
 
 
