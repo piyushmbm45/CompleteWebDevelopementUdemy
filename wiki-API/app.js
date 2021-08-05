@@ -68,10 +68,26 @@ app.route("/articles/:articleTitle")
       }
     });
   })
+  .put((req, res) => {
+    Article.update(
+        {title: req.params.articleTitle},
+        {title: req.body.title, content : req.body.content},
+        {overwrite : true},
+        (err)=>{
+            if(!err){
+                res.send("Success")
+            }
+            else{
+                res.send(err)
+            }
+        }
+    )}
+  );
 
 
 
-  
+
+
 app.listen(3000, () => {
   console.log("listening on 3000");
 });
