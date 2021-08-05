@@ -58,7 +58,8 @@ app
 
 ////////////////////// handling specific article
 
-app.route("/articles/:articleTitle")
+app
+  .route("/articles/:articleTitle")
   .get((req, res) => {
     Article.find({ title: req.params.articleTitle }, (err, foundArticle) => {
       if (!err) {
@@ -70,36 +71,40 @@ app.route("/articles/:articleTitle")
   })
   .put((req, res) => {
     Article.update(
-        {title: req.params.articleTitle},
-        {title: req.body.title, content : req.body.content},
-        {overwrite : true},
-        (err)=>{
-            if(!err){
-                res.send("Success")
-            }
-            else{
-                res.send(err)
-            }
+      { title: req.params.articleTitle },
+      { title: req.body.title, content: req.body.content },
+      { overwrite: true },
+      (err) => {
+        if (!err) {
+          res.send("Success");
+        } else {
+          res.send(err);
         }
-    )}
-  )
-.patch((req,res)=>{
+      }
+    );
+  })
+  .patch((req, res) => {
     Article.update(
-        {title : req.params.articleTitle},
-        {$set : req.body},
-        (err)=>{
-            if(!err){
-                res.send("Success")
-            }
-            else{
-                res.send(err)
-            }
+      { title: req.params.articleTitle },
+      { $set: req.body },
+      (err) => {
+        if (!err) {
+          res.send("Success");
+        } else {
+          res.send(err);
         }
-    )
-});
-
-
-
+      }
+    );
+  })
+  .delete((req, res) => {
+    Article.deleteOne({ title: req.params.articleTitle }, (err) => {
+      if (!err) {
+        res.send("Succes");
+      } else {
+        res.send(err);
+      }
+    });
+  });
 
 app.listen(3000, () => {
   console.log("listening on 3000");
