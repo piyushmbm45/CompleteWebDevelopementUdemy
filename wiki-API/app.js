@@ -22,7 +22,8 @@ const articleSchema = {
 };
 const Article = new mongoose.model("Article", articleSchema);
 
-app.route("/articles")
+app
+  .route("/articles")
   .get((req, res) => {
     Article.find({}, (err, foundArticles) => {
       if (!err) {
@@ -43,7 +44,7 @@ app.route("/articles")
       } else {
         res.send(err);
       }
-    })
+    });
   })
   .delete((req, res) => {
     Article.deleteMany({}, (err) => {
@@ -52,9 +53,25 @@ app.route("/articles")
       } else {
         res.send(err);
       }
-    })
+    });
   });
 
+////////////////////// handling specific article
+
+app.route("/articles/:articleTitle")
+  .get((req, res) => {
+    Article.find({ title: req.params.articleTitle }, (err, foundArticle) => {
+      if (!err) {
+        res.send(foundArticle);
+      } else {
+        res.send(err);
+      }
+    });
+  })
+
+
+
+  
 app.listen(3000, () => {
   console.log("listening on 3000");
 });
