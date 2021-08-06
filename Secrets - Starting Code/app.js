@@ -37,6 +37,24 @@ app.get('/register',(req,res)=>{
     res.render("register")
 })
 
+app.post("/register",(req,res)=>{
+    const emailIn = req.body.username;
+    const passwordIn = req.body.password;
+
+    const newUser = new User({
+        email : emailIn,
+        password : passwordIn
+    })
+    
+    newUser.save((err)=>{
+        if(!err){
+            res.render('secrets')
+        }
+        else{
+            console.log(err);
+        }
+    })
+})
 
 
 app.listen(3000, () => {
