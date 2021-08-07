@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require("express");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const encrypt = require('mongoose-encryption');
+const md5 = require('md5')
 
 
 const app = express();
@@ -23,9 +23,7 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
-// secret long string
-// plugin for this need to pass before defining new model
- userSchema.plugin(encrypt, { secret: process.env.SECRET, encryptedFields: ['password'] });
+
 
 const User = new mongoose.model("User", userSchema);
 
@@ -47,7 +45,7 @@ app.post("/register", (req, res) => {
 
   const newUser = new User({
     email: emailIn,
-    password: passwordIn,
+    password: md5(passwordIn),
   });
 
   newUser.save((err) => {
@@ -61,7 +59,7 @@ app.post("/register", (req, res) => {
 
 app.post("/login", (req, res) => {
   const emailIn = req.body.username;
-  const passwordIn = req.body.password;
+  const passwordIn = md5(req.body.password);
 
   User.findOne({ email: emailIn }, (err, foundUser) => {
     if (err) {
