@@ -1,7 +1,7 @@
 const express = require("express");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const encrption = require('mongoose-encryption');
+const encrypt = require('mongoose-encryption');
 
 
 const app = express();
@@ -17,10 +17,15 @@ mongoose.connect("mongodb://127.0.0.1:27017/userDB", {
   useUnifiedTopology: true,
 });
 
-const userSchema = {
+const userSchema = new mongoose.Schema({
   email: String,
   password: String,
-};
+});
+
+// secret long string
+// plugin for this need to pass before defining new model
+const secret = 'thisismysecretkey';
+userSchema.plugin(encrypt, { secret: secret, encryptedFields: ['password'] });
 
 const User = new mongoose.model("User", userSchema);
 
