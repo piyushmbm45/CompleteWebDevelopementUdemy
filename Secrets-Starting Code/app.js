@@ -110,11 +110,16 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/secrets", (req, res) => {
-  if (req.isAuthenticated()) {
-    res.render("secrets");
-  } else {
-    res.redirect("/login");
-  }
+  
+  User.find({"secret": {$ne:null}}, (err,foundUsers)=>{
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUsers) {
+          res.render("secrets",{usersWithSecrets : foundUsers});
+      }
+    }
+  })
 });
 
 // submit secret route
