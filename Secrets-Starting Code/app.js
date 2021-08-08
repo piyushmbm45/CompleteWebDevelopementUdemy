@@ -68,6 +68,13 @@ app.get("/secrets",(req,res)=>{
   else{
     res.redirect('/login')
   }
+});
+
+////// log out session
+
+app.get('/logout',(req,res)=>{
+  req.logout();
+  res.redirect('/');
 })
 
 app.post("/register", (req, res) => {
