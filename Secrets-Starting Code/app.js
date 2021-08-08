@@ -6,6 +6,7 @@ const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate = require('mongoose-findorcreate')
 
 const app = express();
 
@@ -31,7 +32,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/userDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-// below 3 line of code deprcation warning
+// below 3 line of code deprecation warning
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
@@ -41,12 +42,15 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
+//plugin for passport local mongoose
 userSchema.plugin(passportLocalMongoose);
+// plugin for find or create mongoose
+userSchema.plugin(findOrCreate);
+
 
 const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
-
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
