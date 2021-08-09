@@ -41,14 +41,28 @@ import { render } from "react-dom";
 
 // task 3
 
-const date = new Date();
+// const date = new Date();
 
-const year = date.getFullYear();
+// const year = date.getFullYear();
+
+// render(
+//     <div>
+//         <p>Created By Piyush Jain</p>
+//         <p>Copyright {year}</p>
+//     </div>,
+//     document.getElementById("root")
+// )
+
+// task 3
 
 render(
-    <div>
-        <p>Created By Piyush Jain</p>
-        <p>Copyright {year}</p>
-    </div>,
-    document.getElementById("root")
-)
+  <div>
+  <h1 className="heading" >My fav Chrome Ext</h1>
+    <ul>
+      <li>Ad Blocker</li>
+      <li>JSON pro</li>
+      <li>PIP</li>
+    </ul>
+  </div>,
+  document.getElementById("root")
+);
