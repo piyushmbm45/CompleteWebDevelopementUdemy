@@ -55,14 +55,34 @@ import { render } from "react-dom";
 
 // task 3
 
-const img = "https://picsum.photos/200"
+// const img = "https://picsum.photos/200"
 
+// render(
+//   <div>
+//     <h1 className="heading">My fav Chrome Ext</h1>
+//     <div>
+//         <img src={img} alt="img"/>
+//     </div>
+//   </div>,
+//   document.getElementById("root")
+// );
+
+// task 4
+// inline styling
+// style accept values as object
+
+const customStyle = {
+    color: "red",
+    fontSize: "20px",
+    border: "2px solid black",
+    borderRadius: "20px",
+    padding: "20px",
+    textAlign: "center"
+}
+customStyle.fontSize = "30px"
 render(
   <div>
-    <h1 className="heading">My fav Chrome Ext</h1>
-    <div>
-        <img src={img} alt="img"/>
-    </div>
+    <h1 style={customStyle}>Hello World!</h1>
   </div>,
   document.getElementById("root")
 );
