@@ -41,3 +41,14 @@ import { render } from "react-dom";
 
 // task 3
 
+const date = new Date();
+
+const year = date.getFullYear();
+
+render(
+    <div>
+        <p>Created By Piyush Jain</p>
+        <p>Copyright {year}</p>
+    </div>,
+    document.getElementById("root")
+)
