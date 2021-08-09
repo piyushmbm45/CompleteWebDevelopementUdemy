@@ -25,14 +25,15 @@ import { render } from "react-dom";
 //   document.getElementById("root")
 // );
 
-
 // task 3
 // inserting js into html ( means js into html into js)
-
-const name = "Piyush Jain"
+// we can put any expression inside curly braces but not the statement
+const name = "Piyush Jain";
+const num = 4;
 render(
-    <h1>
-        Hello {name}
-    </h1>,
-    document.getElementById("root")
-)
+  <div>
+    <h1>Hello {name}</h1>
+    <p>Your Lucky Number is {num}</p>
+  </div>,
+  document.getElementById("root")
+);
