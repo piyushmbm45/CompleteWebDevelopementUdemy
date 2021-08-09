@@ -34,7 +34,7 @@ const num = 4;
 render(
   <div>
     <h1>Hello {`${name} ${lName}`}</h1>
-    <p>Your Lucky Number is {num}</p>
+    <p>Your Lucky Number is {Math.floor(Math.random()*10)}</p>
   </div>,
   document.getElementById("root")
 );
