@@ -33,7 +33,7 @@ const lName = "Jain"
 const num = 4;
 render(
   <div>
-    <h1>Hello {name} {lName}</h1>
+    <h1>Hello {`${name} ${lName}`}</h1>
     <p>Your Lucky Number is {num}</p>
   </div>,
   document.getElementById("root")
