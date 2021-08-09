@@ -13,14 +13,26 @@ import { render } from "react-dom";
 
 // task 2
 
+// render(
+//   <div>
+//   <h1>My fav Chrome Ext</h1>
+//     <ul>
+//       <li>Ad Blocker</li>
+//       <li>JSON pro</li>
+//       <li>PIP</li>
+//     </ul>
+//   </div>,
+//   document.getElementById("root")
+// );
+
+
+// task 3
+// inserting js into html ( means js into html into js)
+
+const name = "Piyush Jain"
 render(
-  <div>
-  <h1>My fav Chrome Ext</h1>
-    <ul>
-      <li>Ad Blocker</li>
-      <li>JSON pro</li>
-      <li>PIP</li>
-    </ul>
-  </div>,
-  document.getElementById("root")
-);
+    <h1>
+        Hello {name}
+    </h1>,
+    document.getElementById("root")
+)
