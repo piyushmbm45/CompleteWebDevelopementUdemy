@@ -28,13 +28,16 @@ import { render } from "react-dom";
 // task 3
 // inserting js into html ( means js into html into js)
 // we can put any expression inside curly braces but not the statement
-const name = "Piyush";
-const lName = "Jain"
-const num = 4;
-render(
-  <div>
-    <h1>Hello {`${name} ${lName}`}</h1>
-    <p>Your Lucky Number is {Math.floor(Math.random()*10)}</p>
-  </div>,
-  document.getElementById("root")
-);
+// const name = "Piyush";
+// const lName = "Jain"
+// const num = 4;
+// render(
+//   <div>
+//     <h1>Hello {`${name} ${lName}`}</h1>
+//     <p>Your Lucky Number is {Math.floor(Math.random()*10)}</p>
+//   </div>,
+//   document.getElementById("root")
+// );
+
+// task 3
+
