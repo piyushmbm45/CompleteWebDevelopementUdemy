@@ -1,7 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
+import App from "./components/app"
 
 render(
-  <h1>Heading</h1>,
+  <App />,
   document.getElementById("root")
 )
