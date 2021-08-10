@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import Heading from "./heading";
+import List from "./list";
 
 // we are using html in js file this is done by react it compile html into js
 // task 1
@@ -130,12 +131,8 @@ import Heading from "./heading";
 
 render(
   <div>
-    <Heading></Heading>
-    <ul>
-      <li>Ad Blocker</li>
-      <li>JSON pro</li>
-      <li>PIP</li>
-    </ul>
+    <Heading />
+    <List />
   </div>,
   document.getElementById("root")
 );
