@@ -3,7 +3,7 @@ import { render } from "react-dom";
 // import Heading from "./heading";
 // import List from "./list";
 
-import App from "./app"
+import App from "./components/app"
 
 // we are using html in js file this is done by react it compile html into js
 // task 1
