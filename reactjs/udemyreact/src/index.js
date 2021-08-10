@@ -71,18 +71,51 @@ import { render } from "react-dom";
 // inline styling
 // style accept values as object
 
+// const customStyle = {
+//     color: "red",
+//     fontSize: "20px",
+//     border: "2px solid black",
+//     borderRadius: "20px",
+//     padding: "20px",
+//     textAlign: "center"
+// }
+// customStyle.fontSize = "30px"
+// render(
+//   <div>
+//     <h1 style={customStyle}>Hello World!</h1>
+//   </div>,
+//   document.getElementById("root")
+// );
+
+//task 5
+//Create a React app from scratch.
+//Show a single h1 that says "Good morning" if between midnight and 12PM.
+//or "Good Afternoon" if between 12PM and 6PM.
+//or "Good evening" if between 6PM and midnight.
+//Apply the "heading" style in the styles.css
+//Dynamically change the color of the h1 using inline css styles.
+//Morning = red, Afternoon = green, Night = blue.
+
+const date = new Date();
+
+let time = date.getHours();
+
 const customStyle = {
-    color: "red",
-    fontSize: "20px",
-    border: "2px solid black",
-    borderRadius: "20px",
-    padding: "20px",
-    textAlign: "center"
+  color: "black"
 }
-customStyle.fontSize = "30px"
+let greetingwish;
+if(time <12){
+ greetingwish ="Good Morning";
+  customStyle.color = "red"
+}else if(time<18){
+ greetingwish ="Good Afternoon";
+  customStyle.color = "green"
+}else{
+ greetingwish = "Good Evening";
+  customStyle.color = "blue"
+}
+
 render(
-  <div>
-    <h1 style={customStyle}>Hello World!</h1>
-  </div>,
+  <h1 class="heading" style={customStyle}>{greetingwish}</h1>,
   document.getElementById("root")
-);
+)
