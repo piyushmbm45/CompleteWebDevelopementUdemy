@@ -96,26 +96,45 @@ import { render } from "react-dom";
 //Dynamically change the color of the h1 using inline css styles.
 //Morning = red, Afternoon = green, Night = blue.
 
-const date = new Date();
+// const date = new Date();
 
-let time = date.getHours();
+// let time = date.getHours();
 
-const customStyle = {
-  color: "black"
-}
-let greetingwish;
-if(time <12){
- greetingwish ="Good Morning";
-  customStyle.color = "red"
-}else if(time<18){
- greetingwish ="Good Afternoon";
-  customStyle.color = "green"
-}else{
- greetingwish = "Good Evening";
-  customStyle.color = "blue"
+// const customStyle = {
+//   color: "black"
+// }
+// let greetingwish;
+// if(time <12){
+//  greetingwish ="Good Morning";
+//   customStyle.color = "red"
+// }else if(time<18){
+//  greetingwish ="Good Afternoon";
+//   customStyle.color = "green"
+// }else{
+//  greetingwish = "Good Evening";
+//   customStyle.color = "blue"
+// }
+
+// render(
+//   <h1 class="heading" style={customStyle}>{greetingwish}</h1>,
+//   document.getElementById("root")
+// )
+
+// task 6
+// -> React Component
+
+function Heading() {
+  return <h1>This is My heading</h1>;
 }
 
 render(
-  <h1 class="heading" style={customStyle}>{greetingwish}</h1>,
+  <div>
+    <Heading></Heading>
+    <ul>
+      <li>Ad Blocker</li>
+      <li>JSON pro</li>
+      <li>PIP</li>
+    </ul>
+  </div>,
   document.getElementById("root")
-)
+);
