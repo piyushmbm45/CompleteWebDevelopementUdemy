@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+import Heading from "./heading";
 
 // we are using html in js file this is done by react it compile html into js
 // task 1
@@ -123,9 +124,9 @@ import { render } from "react-dom";
 // task 6
 // -> React Component
 
-function Heading() {
-  return <h1>This is My heading</h1>;
-}
+// function Heading() {
+//   return <h1>This is My heading</h1>;
+// }
 
 render(
   <div>
