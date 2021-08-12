@@ -1,11 +1,13 @@
 import React from "react";
+import Avatar from "./avatar";
+
 
 function Card(props) {
   return (
     <div className="container">
       <div className="top">
         <h2>{props.name}</h2>
-        <img src={props.img} alt="img" />
+        <Avatar img={props.img}/>
       </div>
       <div className="bottom">
         <p>{props.tel}</p>

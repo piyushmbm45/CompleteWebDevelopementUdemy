@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "./card";
 import ContactArray from "../contact.js";
-// import './App.css';
 
 function App() {
   return (
