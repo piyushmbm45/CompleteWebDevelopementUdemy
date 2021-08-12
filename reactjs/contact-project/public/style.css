@@ -25,6 +25,9 @@ h1:first-child {
 img {
     border-radius: 50%;
     border: 5px solid white;
+    width: 235px;
+    height: 235px;
+    margin: 10px;
 }
 
 .top{
