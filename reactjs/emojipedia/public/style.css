@@ -26,7 +26,7 @@ body {
     max-width: 25%;
     padding: 1.8rem;
     border-radius: 10px;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 0 rgba(114, 100, 100, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     transition: all 100ms ease-in-out;
 }
