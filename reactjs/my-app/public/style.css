@@ -12,30 +12,28 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.main {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    flex-wrap: nowrap;
-}
+ .app {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: minmax(100px,auto);
+    gap: 10px;
+} 
 
 .container {
     box-shadow: 2px 2px rgba(0, 0, 0, .3);
     padding: 1rem;
     margin: 10px;
-    width: 25%;
     border: 1px solid black;
     border-radius: 20px;
-    float: left;
+    
 }
 
 .footer {
-    /* position: absolute; */
     background-color: rgb(247, 227, 227);
     padding: 15px;
     font-weight: 50;
     width: 100%;
-    bottom: 0;
+    /* bottom: 0px; */
 }
 
 .footerPara {

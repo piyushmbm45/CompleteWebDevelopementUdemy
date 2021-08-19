@@ -9,10 +9,10 @@ function App() {
     <div>
       <Header />
       <div className="main">
-        <div className=".app">
-          {notes.map((ele) => {
-            return <Note title={ele.title} content={ele.content} />;
-          })}
+        <div className="app">
+            {notes.map((ele) => {
+              return <Note title={ele.title} content={ele.content} />;
+            })}
         </div>
       </div>
       <Footer />
