@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./header";
 import Footer from "./footer";
 import Note from "./note";
-import notes from "../notes";
+import Createarea from "./createarea";
 
 function App() {
+
+  const [inputArray,setinputArray] = useState([])
+function addNote(note){
+setinputArray(preValue=>{
+  return [...preValue, note]
+})
+}
   return (
     <div>
       <Header />
-      <div className="main">
-        <div className="app">
-            {notes.map((ele) => {
-              return <Note title={ele.title} content={ele.content} />;
-            })}
-        </div>
-      </div>
+      <Createarea onAdd={addNote}/>
+      {inputArray.map((ele,index)=>{
+       return( <Note key={index} id={index} title={ele.title} content={ele.content}/>
+      )})}
       <Footer />
     </div>
   );
